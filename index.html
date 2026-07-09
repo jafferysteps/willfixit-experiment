@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome & Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <!-- Top Call Info Header Bar -->
+    <!-- Top Announcement Bar -->
     <div class="top-announcement-bar">
         <div class="container top-bar-flex">
             <span class="emergency-tag"><i class="fa-solid fa-clock"></i> Emergency Service 7 Days A Week</span>
@@ -27,18 +27,50 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
+    <!-- Main Navigation Header with Interactive Dropdowns -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo-area">
                 <span class="logo-text-primary">WILL FIX IT</span>
                 <span class="logo-text-secondary">HVAC • PLUMBING • ELECTRIC</span>
             </div>
+            
             <nav class="desktop-nav">
-                <a href="#services">Services</a>
+                <!-- Dropdown 1: Plumbing -->
+                <div class="nav-dropdown">
+                    <a href="#services" class="dropdown-trigger">Plumbing <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#services"><i class="fa-solid fa-droplet"></i> Drain Cleaning</a>
+                        <a href="#services"><i class="fa-solid fa-temperature-arrow-up"></i> Water Heaters</a>
+                        <a href="#services"><i class="fa-solid fa-wrench"></i> Pipe Leak Repair</a>
+                    </div>
+                </div>
+                
+                <!-- Dropdown 2: HVAC -->
+                <div class="nav-dropdown">
+                    <a href="#services" class="dropdown-trigger">Heating & Cooling <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#services"><i class="fa-solid fa-snowflake"></i> A/C Diagnostics</a>
+                        <a href="#services"><i class="fa-solid fa-fire"></i> Furnace Tune-up</a>
+                        <a href="#services"><i class="fa-solid fa-wind"></i> Air Purification</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown 3: Electrical -->
+                <div class="nav-dropdown">
+                    <a href="#services" class="dropdown-trigger">Electrical <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#services"><i class="fa-solid fa-bolt"></i> Safety Inspections</a>
+                        <a href="#services"><i class="fa-solid fa-screwdriver-wrench"></i> Panel Upgrades</a>
+                        <a href="#services"><i class="fa-solid fa-plug"></i> Generator Install</a>
+                    </div>
+                </div>
+
                 <a href="#coupons">Special Offers</a>
-                <a href="#why-us">Why Choose Us</a>
+                <a href="#calculator">Price Calculator</a>
+                <a href="#faq">FAQ</a>
             </nav>
+
             <div class="header-cta">
                 <a href="#booking-form-anchor" class="btn btn-secondary">Schedule Online</a>
             </div>
@@ -50,15 +82,15 @@
         <div class="hero-overlay"></div>
         <div class="container hero-grid">
             <div class="hero-info">
-                <span class="hero-pretitle">San Antonio's Trusted Experts</span>
+                <span class="hero-pretitle">San Antonio's Local Experts</span>
                 <h1>HVAC, Plumbing & Electrical Problems?</h1>
                 <h2 class="hero-slogan">We Will Fix It!</h2>
-                <p class="hero-text-body">Our team of certified technicians is ready to solve your heating, cooling, plumbing, and electrical issues. Fast response times and fully stocked service trucks.</p>
+                <p class="hero-text-body">Our team of certified local technicians is on standby to resolve your home heating, cooling, plumbing, and electrical issues today. Fully stocked service trucks and prompt dispatch.</p>
                 
                 <div class="hero-checklists">
                     <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Exceptional Service Guarantee</div>
                     <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Certified, Licensed & Background-Checked</div>
-                    <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Upfront Pricing - No Hidden Fees</div>
+                    <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Upfront Transparent Estimates</div>
                 </div>
 
                 <div class="hero-actions">
@@ -66,44 +98,67 @@
                 </div>
             </div>
 
-            <!-- Hero Form Block (Inspired by Umbraco Forms) -->
+            <!-- Hero Form Block -->
             <div class="hero-form-wrapper" id="booking-form-anchor">
-                <h3>Schedule Your Service</h3>
-                <p>Fill out the form below and our dispatcher will call you to confirm.</p>
+                <h3>Schedule Service Online</h3>
+                <p>Submit your details to lock in immediate service dispatch priority.</p>
                 <form id="hero-schedule-form">
                     <div class="form-group">
-                        <label for="form-name">Your Name *</label>
+                        <label for="form-name">Full Name *</label>
                         <input type="text" id="form-name" required class="form-control" placeholder="John Doe">
                     </div>
-                    <div class="form-group">
-                        <label for="form-phone">Phone Number *</label>
-                        <input type="tel" id="form-phone" required class="form-control" placeholder="(210) 555-0199">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="form-phone">Phone *</label>
+                            <input type="tel" id="form-phone" required class="form-control" placeholder="(210) 555-0199">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-zip">Zip Code *</label>
+                            <input type="text" id="form-zip" required class="form-control" placeholder="78247">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="form-service">Required Service *</label>
                         <select id="form-service" required class="form-control">
-                            <option value="">-- Select Service --</option>
+                            <option value="">-- Select Service Category --</option>
                             <option value="ac">Air Conditioning / Heating</option>
-                            <option value="plumbing">Plumbing / Drain Cleaning</option>
+                            <option value="plumbing">Plumbing / Drain Snaking</option>
                             <option value="waterheater">Water Heater Repair/Install</option>
-                            <option value="electrical">Electrical Repair</option>
+                            <option value="electrical">Electrical Upgrades</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-secondary btn-block">Submit Booking Request</button>
+                    <button type="submit" class="btn btn-secondary btn-block">Book Appointment Priority</button>
                     <div id="form-success-alert" class="success-alert hidden">
-                        <i class="fa-solid fa-circle-check"></i> Service request submitted! We will call you shortly.
+                        <i class="fa-solid fa-circle-check"></i> Booking request received! A dispatcher will call you shortly.
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Coupons & Special Offers Section (Key Will Fix It style element) -->
+    <!-- Interactive Zip Code Checker Section -->
+    <section class="zip-checker-section">
+        <div class="container Checker-box">
+            <div class="checker-flex">
+                <div class="checker-text">
+                    <h4>Check If We Serve Your Area</h4>
+                    <p>Enter your San Antonio zip code to verify immediate dispatch availability.</p>
+                </div>
+                <div class="checker-input-area">
+                    <input type="text" id="zip-input" placeholder="Enter Zip Code (e.g. 78247)" class="form-control zip-control">
+                    <button id="check-zip-btn" class="btn btn-primary">Check Availability</button>
+                </div>
+            </div>
+            <div id="checker-response" class="checker-response-alert hidden"></div>
+        </div>
+    </section>
+
+    <!-- Coupons & Special Offers Section -->
     <section class="coupons-section" id="coupons">
         <div class="container">
             <div class="section-title-wrapper text-center">
                 <h2>San Antonio Special Offers & Coupons</h2>
-                <p>Print or show these coupons to your service technician to save today!</p>
+                <p>Present these promotional codes to your technician to save on your next service call!</p>
             </div>
 
             <div class="coupons-grid">
@@ -115,7 +170,7 @@
                             <span class="discount-value">$50</span>
                         </div>
                         <h3>Any Plumbing Repair</h3>
-                        <p>Discount off any standard plumbing repair service. Cannot be combined with other offers.</p>
+                        <p>Receive $50 off any standard residential plumbing repair service. Must present coupon code.</p>
                         <span class="coupon-code">CODE: PL50</span>
                     </div>
                 </div>
@@ -126,8 +181,8 @@
                             <span class="save-tag">SAVE</span>
                             <span class="discount-value">$99</span>
                         </div>
-                        <h3>A/C & Heating Safety Tune-Up</h3>
-                        <p>Complete professional diagnostic checkup of your HVAC system before the season.</p>
+                        <h3>A/C & Heating Tune-Up</h3>
+                        <p>Complete professional diagnostics, air safety tests, and efficiency checks for your HVAC system.</p>
                         <span class="coupon-code">CODE: AC99</span>
                     </div>
                 </div>
@@ -138,8 +193,8 @@
                             <span class="save-tag">FREE</span>
                             <span class="discount-value">Water</span>
                         </div>
-                        <h3>Heater Diagnostic Check</h3>
-                        <p>Complimentary diagnostic callout with any water heater repair service.</p>
+                        <h3>Heater Inspection Check</h3>
+                        <p>Free comprehensive inspection and flush diagnostic with any scheduled hot water heater repair.</p>
                         <span class="coupon-code">CODE: WHTEST</span>
                     </div>
                 </div>
@@ -151,8 +206,8 @@
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-title-wrapper text-center">
-                <h2>Our HVAC, Plumbing & Electric Services</h2>
-                <p>We provide comprehensive solutions to keep your home running safely and comfortably.</p>
+                <h2>Complete Home Service Solutions</h2>
+                <p>Highly qualified, state-licensed experts available for standard diagnostics and installation calls.</p>
             </div>
 
             <div class="services-grid">
@@ -160,50 +215,149 @@
                 <div class="service-card">
                     <div class="service-icon-circle"><i class="fa-solid fa-snowflake"></i></div>
                     <h3>Heating & Cooling</h3>
-                    <p>Professional air conditioner repairs, furnace checkups, heat pump installations, and regular seasonal maintenance tune-ups.</p>
+                    <p>Professional diagnostic repairs, furnace checkups, central heat pump installations, and regular seasonal maintenance tune-ups.</p>
+                    <ul class="srv-points">
+                        <li><i class="fa-solid fa-check"></i> System Repairs</li>
+                        <li><i class="fa-solid fa-check"></i> Energy Efficient Installs</li>
+                        <li><i class="fa-solid fa-check"></i> Air Duct Sealing</li>
+                    </ul>
                 </div>
                 <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon-circle"><i class="fa-solid fa-faucet"></i></div>
                     <h3>Plumbing & Drains</h3>
-                    <p>Drain snaking, sewer line repair, slab leak detection, garbage disposal repair, and Bradford White water heater installations.</p>
+                    <p>Drain cleaning, sewer line repairs, slab leak detection, garbage disposal repairs, and tankless water heater installations.</p>
+                    <ul class="srv-points">
+                        <li><i class="fa-solid fa-check"></i> Main Sewer Lines</li>
+                        <li><i class="fa-solid fa-check"></i> Hydro-Jetting</li>
+                        <li><i class="fa-solid fa-check"></i> Sump Pumps</li>
+                    </ul>
                 </div>
                 <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon-circle"><i class="fa-solid fa-bolt"></i></div>
                     <h3>Electrical Systems</h3>
-                    <p>Safety inspections, panel upgrades, wiring, generator installations, and lighting solutions from licensed residential electricians.</p>
+                    <p>Electrical panel upgrades, wiring, generator installations, surge protection, and safety checks from residential electricians.</p>
+                    <ul class="srv-points">
+                        <li><i class="fa-solid fa-check"></i> Panel Upgrades</li>
+                        <li><i class="fa-solid fa-check"></i> Backup Generators</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Circuits</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Value Propositions -->
-    <section class="why-us-section" id="why-us">
-        <div class="container why-us-grid">
-            <div class="why-us-content">
-                <h2>Why San Antonio Chooses Will Fix It</h2>
-                <p>We are dedicated to providing the highest quality repairs and customer service. Our technicians are fully licensed, background-checked, and respect your home.</p>
-                
-                <div class="value-block">
-                    <h4><i class="fa-solid fa-shield-halved"></i> Exceptional Service Guarantee</h4>
-                    <p>If you are not completely satisfied with our service, we will do whatever it takes to make it right.</p>
+    <!-- Realistic Media & Call to Action Section -->
+    <section class="media-cta-section">
+        <div class="container media-grid">
+            <div class="media-image-box">
+                <img src="assets/tech_repair.png" alt="HVAC Repair Technician" class="realistic-img">
+            </div>
+            <div class="media-content-box">
+                <span class="sub-title">Expert Care</span>
+                <h2>We Get It Done Right, The First Time</h2>
+                <p>Don't settle for temporary handyman fixes. Our team brings state-of-the-art diagnostic equipment, fully stocked trucks, and a 100% satisfaction guarantee. We prioritize safety, clean workspaces, and clear communication.</p>
+                <div class="bullet-list-bold">
+                    <div class="b-item"><i class="fa-solid fa-shield-halved"></i> 100% Satisfaction Guarantee</div>
+                    <div class="b-item"><i class="fa-solid fa-user-check"></i> Background-Checked & Drug-Tested Employees</div>
+                    <div class="b-item"><i class="fa-solid fa-calendar-check"></i> Fast Response Dispatch Times</div>
                 </div>
-                
-                <div class="value-block">
-                    <h4><i class="fa-solid fa-user-check"></i> Licensed & Background-Checked</h4>
-                    <p>All our plumbers, HVAC techs, and electricians undergo rigorous training and vetting.</p>
+                <a href="#booking-form-anchor" class="btn btn-primary btn-lg">Book Service Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Pricing Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-title-wrapper text-center">
+                <h2>Interactive Estimate Calculator</h2>
+                <p>Select the baseline services you need to estimate your diagnostics and repair range.</p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calc-grid">
+                    <div class="calc-options">
+                        <h3>1. Select Services Needed</h3>
+                        
+                        <div class="calc-block">
+                            <h5><i class="fa-solid fa-snowflake"></i> Heating & Cooling</h5>
+                            <div class="calc-option-item">
+                                <label><input type="checkbox" class="calc-check" data-price="99" data-name="AC Safety Tune-Up"> AC Safety Tune-Up ($99)</label>
+                            </div>
+                            <div class="calc-option-item">
+                                <label><input type="checkbox" class="calc-check" data-price="149" data-name="System Diagnostic"> AC/Heating Diagnostic ($149)</label>
+                            </div>
+                        </div>
+
+                        <div class="calc-block">
+                            <h5><i class="fa-solid fa-faucet"></i> Plumbing & Drain</h5>
+                            <div class="calc-option-item">
+                                <label><input type="checkbox" class="calc-check" data-price="175" data-name="Drain Snaking"> Drain Snaking Service ($175)</label>
+                            </div>
+                            <div class="calc-option-item">
+                                <label><input type="checkbox" class="calc-check" data-price="250" data-name="Leak Diagnostics"> Slab Leak Detection ($250)</label>
+                            </div>
+                        </div>
+
+                        <div class="calc-block">
+                            <h5><i class="fa-solid fa-bolt"></i> Electrical Services</h5>
+                            <div class="calc-option-item">
+                                <label><input type="checkbox" class="calc-check" data-price="89" data-name="Safety Inspection"> Home Electrical Safety Check ($89)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calc-summary">
+                        <div class="summary-box">
+                            <h4>Estimated baseline</h4>
+                            <div class="price-val">$<span id="calc-total">0</span></div>
+                            <p class="summary-disclaimer">*Standard diagnostic rates only. Parts and custom repairs determined on site.</p>
+                            
+                            <hr class="calc-hr">
+                            
+                            <h5>Selected Items:</h5>
+                            <ul id="calc-selected-list" class="summary-list">
+                                <li class="empty-msg">No services selected</li>
+                            </ul>
+                            
+                            <a href="#booking-form-anchor" class="btn btn-secondary btn-block">Lock In Estimate</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="why-us-graphics">
-                <div class="stat-container">
-                    <div class="stat-item">
-                        <span class="stat-num">100%</span>
-                        <span class="stat-lbl">Satisfaction Guarantee</span>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title-wrapper text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Have questions? We have compiled baseline answers for you.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">What are your hours of operation? <i class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>We are open 24 hours a day, 7 days a week, 365 days a year for emergency services. Standard office operating hours are 8:00 AM to 6:00 PM.</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-num">24/7</span>
-                        <span class="stat-lbl">Emergency Response</span>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">Are your technicians licensed and background-checked? <i class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes. All our technicians are fully licensed in the state of Texas, background-checked, and regularly drug-tested for your family's safety and peace of mind.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">What is your Exceptional Service Guarantee? <i class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>If you are not completely satisfied with our service within one year of your installation or repair, we will resolve the issue to your standard or refund your investment.</p>
                     </div>
                 </div>
             </div>
@@ -220,12 +374,14 @@
             <div>
                 <h4>Contact Us</h4>
                 <p>3535 Metro Pkwy, San Antonio, TX 78247</p>
-                <p>Office: (726) 222-4137</p>
+                <p>Emergency Line: (726) 222-4137</p>
+                <p>Standard Office: (210) 555-0188</p>
             </div>
             <div>
-                <h4>Hours</h4>
-                <p>Monday - Sunday: Open 24 Hours</p>
-                <p>Emergency Dispatch Available</p>
+                <h4>Our Services</h4>
+                <p>Air Conditioning Repair & Install</p>
+                <p>Drain Cleaning & Leak Detection</p>
+                <p>Electrical Panel Upgrades</p>
             </div>
         </div>
         <div class="footer-bottom text-center">
@@ -233,13 +389,7 @@
         </div>
     </footer>
 
-    <!-- Booking Form Script -->
-    <script>
-        document.getElementById("hero-schedule-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            this.style.display = "none";
-            document.getElementById("form-success-alert").classList.remove("hidden");
-        });
-    </script>
+    <!-- Interactive Script -->
+    <script src="index.js"></script>
 </body>
 </html>
