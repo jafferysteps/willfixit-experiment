@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcCards = document.querySelectorAll(".calc-item-card");
     const calcTotal = document.getElementById("calc-total");
     const calcSelectedList = document.getElementById("calc-selected-list");
+    const calcSelectedHidden = document.getElementById("calc-selected-hidden");
 
     function updateCalculator() {
         let total = 0;
         calcSelectedList.innerHTML = "";
         let selectedCount = 0;
+        const selectedNames = [];
 
         calcCards.forEach(card => {
             if (card.classList.contains("active")) {
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const name = card.dataset.name;
                 const price = parseFloat(card.dataset.price);
                 total += price;
+                selectedNames.push(name);
 
                 // Add item to sidebar list
                 const li = document.createElement("li");
@@ -32,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         calcTotal.textContent = total;
+        if (calcSelectedHidden) {
+            calcSelectedHidden.value = selectedNames.join(", ") || "None";
+        }
     }
 
     calcCards.forEach(card => {
@@ -39,16 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.toggle("active");
             updateCalculator();
         });
-    });
-
-    // Calculator Booking Form Submission
-    const calcBookingForm = document.getElementById("calc-booking-form");
-    const calcSuccess = document.getElementById("calc-success");
-
-    calcBookingForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        calcBookingForm.style.display = "none";
-        calcSuccess.classList.remove("hidden");
     });
 
     // FAQ Accordion Toggle
@@ -66,15 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-    });
-
-    // Hero Form Handling
-    const scheduleForm = document.getElementById("hero-schedule-form");
-    const successAlert = document.getElementById("form-success-alert");
-
-    scheduleForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        scheduleForm.style.display = "none";
-        successAlert.classList.remove("hidden");
     });
 });

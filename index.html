@@ -102,7 +102,9 @@
             <div class="hero-form-wrapper" id="booking-form-anchor">
                 <h3>Schedule Service Online</h3>
                 <p>Submit your details to lock in immediate service dispatch priority.</p>
-                <form id="hero-schedule-form">
+                <form id="hero-schedule-form" action="https://formsubmit.co/cyed.jaffery@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://jafferysteps.github.io/willfixit-experiment/">
+                    <input type="hidden" name="_subject" value="New Will Fix It Lead (Hero Form)">
                     <div class="form-group">
                         <label for="form-name">Full Name *</label>
                         <input type="text" id="form-name" required class="form-control" placeholder="John Doe">
@@ -140,7 +142,7 @@
     <section class="calculator-section" id="calculator">
         <div class="container">
             <div class="section-title-wrapper text-center">
-                <h2>Interactive Estimate Calculator</h2>
+                <h2>Get an Instant Service Estimate</h2>
                 <p>Select the baseline services you need to estimate your diagnostics and repair range.</p>
             </div>
 
@@ -223,7 +225,10 @@
                             
                             <div class="calc-lead-form">
                                 <h5>Lock In Estimate & Book</h5>
-                                <form id="calc-booking-form">
+                                <form id="calc-booking-form" action="https://formsubmit.co/cyed.jaffery@gmail.com" method="POST">
+                                    <input type="hidden" name="_next" value="https://jafferysteps.github.io/willfixit-experiment/">
+                                    <input type="hidden" name="_subject" value="New Will Fix It Lead (Calculator Form)">
+                                    <input type="hidden" name="Selected Services" id="calc-selected-hidden" value="None">
                                     <div class="form-group">
                                         <input type="text" id="calc-name" placeholder="Your Name" required class="form-control calc-input">
                                     </div>
@@ -243,50 +248,71 @@
         </div>
     </section>
 
-    <!-- Coupons & Special Offers Section -->
+    <!-- Guarantees & Trust Protection Section -->
     <section class="coupons-section" id="coupons">
         <div class="container">
             <div class="section-title-wrapper text-center">
-                <h2>San Antonio Special Offers & Coupons</h2>
-                <p>Present these promotional codes to your technician to save on your next service call!</p>
+                <h2>Our Guarantees & Trust Protection</h2>
+                <p>We stand behind our heating, cooling, plumbing, and electrical services with premium protection plans.</p>
             </div>
 
             <div class="coupons-grid">
-                <!-- Coupon 1 -->
+                <!-- Card 1 -->
                 <div class="coupon-card">
                     <div class="coupon-inner">
                         <div class="coupon-header">
-                            <span class="save-tag">SAVE</span>
-                            <span class="discount-value">$50</span>
+                            <span class="discount-value" style="font-size: 1.8rem; color: var(--accent-orange);"><i class="fa-solid fa-shield-halved"></i> Service Guarantee</span>
                         </div>
-                        <h3>Any Plumbing Repair</h3>
-                        <p>Receive $50 off any standard residential plumbing repair service. Must present coupon code.</p>
-                        <span class="coupon-code">CODE: PL50</span>
+                        <h3>100% Satisfaction</h3>
+                        <p>If you are not completely satisfied with our service, we will resolve the issue to your standards or refund your investment.</p>
                     </div>
                 </div>
-                <!-- Coupon 2 -->
+                <!-- Card 2 -->
                 <div class="coupon-card coupon-highlight">
                     <div class="coupon-inner">
                         <div class="coupon-header">
-                            <span class="save-tag">SAVE</span>
-                            <span class="discount-value">$99</span>
+                            <span class="discount-value" style="font-size: 1.8rem; color: var(--accent-orange);"><i class="fa-solid fa-award"></i> 1-Year Warranty</span>
                         </div>
-                        <h3>A/C & Heating Tune-Up</h3>
-                        <p>Complete professional diagnostics, air safety tests, and efficiency checks for your HVAC system.</p>
-                        <span class="coupon-code">CODE: AC99</span>
+                        <h3>Workmanship Covered</h3>
+                        <p>All plumbing, HVAC, and electrical repairs are backed by a full 1-year warranty on materials and workmanship.</p>
                     </div>
                 </div>
-                <!-- Coupon 3 -->
+                <!-- Card 3 -->
                 <div class="coupon-card">
                     <div class="coupon-inner">
                         <div class="coupon-header">
-                            <span class="save-tag">FREE</span>
-                            <span class="discount-value">Water</span>
+                            <span class="discount-value" style="font-size: 1.8rem; color: var(--accent-orange);"><i class="fa-solid fa-file-invoice-dollar"></i> Upfront Pricing</span>
                         </div>
-                        <h3>Heater Inspection Check</h3>
-                        <p>Free comprehensive inspection and flush diagnostic with any scheduled hot water heater repair.</p>
-                        <span class="coupon-code">CODE: WHTEST</span>
+                        <h3>No Hidden Surcharges</h3>
+                        <p>We diagnose your problem and provide a transparent, upfront pricing quote before any repair work begins.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Step Service Process Section -->
+    <section class="process-section" style="padding: 60px 0; background-color: white;">
+        <div class="container">
+            <div class="section-title-wrapper text-center" style="margin-bottom: 40px;">
+                <h2>Our 3-Step Service Process</h2>
+                <p>Getting your home comfort systems fixed is fast and straightforward.</p>
+            </div>
+            <div class="coupons-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="service-card" style="border-bottom: 4px solid var(--accent-orange); text-align: center;">
+                    <div class="service-icon-circle" style="background-color: var(--accent-orange); margin: 0 auto 20px;"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>1. Request Service</h3>
+                    <p>Submit your details online using our estimator or call our 24/7 priority booking line.</p>
+                </div>
+                <div class="service-card" style="border-bottom: 4px solid var(--primary-blue); text-align: center;">
+                    <div class="service-icon-circle" style="background-color: var(--primary-blue); margin: 0 auto 20px;"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>2. Professional Dispatch</h3>
+                    <p>A licensed, background-checked technician is sent to your home in a fully stocked truck.</p>
+                </div>
+                <div class="service-card" style="border-bottom: 4px solid var(--accent-orange); text-align: center;">
+                    <div class="service-icon-circle" style="background-color: var(--accent-orange); margin: 0 auto 20px;"><i class="fa-solid fa-house-chimney-user"></i></div>
+                    <h3>3. Diagnostics & Repair</h3>
+                    <p>We diagnose the issue, provide upfront transparent pricing, and fix it on the spot.</p>
                 </div>
             </div>
         </div>
