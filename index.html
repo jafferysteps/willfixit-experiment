@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Fix It | HVAC, Plumbing & Electric | San Antonio Texas</title>
+    <meta name="description" content="Get expert HVAC, Plumbing, and Electric services in San Antonio, Texas from the experts at Will Fix It. Call (726) 222-4137 or schedule your service online!">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome & Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Top Call Info Header Bar -->
+    <div class="top-announcement-bar">
+        <div class="container top-bar-flex">
+            <span class="emergency-tag"><i class="fa-solid fa-clock"></i> Emergency Service 7 Days A Week</span>
+            <div class="header-phone">
+                <span>Call Now:</span>
+                <a href="tel:7262224137" class="phone-link"><i class="fa-solid fa-phone"></i> (726) 222-4137</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <span class="logo-text-primary">WILL FIX IT</span>
+                <span class="logo-text-secondary">HVAC • PLUMBING • ELECTRIC</span>
+            </div>
+            <nav class="desktop-nav">
+                <a href="#services">Services</a>
+                <a href="#coupons">Special Offers</a>
+                <a href="#why-us">Why Choose Us</a>
+            </nav>
+            <div class="header-cta">
+                <a href="#booking-form-anchor" class="btn btn-secondary">Schedule Online</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Will Fix It Style Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="container hero-grid">
+            <div class="hero-info">
+                <span class="hero-pretitle">San Antonio's Trusted Experts</span>
+                <h1>HVAC, Plumbing & Electrical Problems?</h1>
+                <h2 class="hero-slogan">We Will Fix It!</h2>
+                <p class="hero-text-body">Our team of certified technicians is ready to solve your heating, cooling, plumbing, and electrical issues. Fast response times and fully stocked service trucks.</p>
+                
+                <div class="hero-checklists">
+                    <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Exceptional Service Guarantee</div>
+                    <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Certified, Licensed & Background-Checked</div>
+                    <div class="chk-item"><i class="fa-solid fa-circle-check"></i> Upfront Pricing - No Hidden Fees</div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="tel:7262224137" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call (726) 222-4137</a>
+                </div>
+            </div>
+
+            <!-- Hero Form Block (Inspired by Umbraco Forms) -->
+            <div class="hero-form-wrapper" id="booking-form-anchor">
+                <h3>Schedule Your Service</h3>
+                <p>Fill out the form below and our dispatcher will call you to confirm.</p>
+                <form id="hero-schedule-form">
+                    <div class="form-group">
+                        <label for="form-name">Your Name *</label>
+                        <input type="text" id="form-name" required class="form-control" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-phone">Phone Number *</label>
+                        <input type="tel" id="form-phone" required class="form-control" placeholder="(210) 555-0199">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-service">Required Service *</label>
+                        <select id="form-service" required class="form-control">
+                            <option value="">-- Select Service --</option>
+                            <option value="ac">Air Conditioning / Heating</option>
+                            <option value="plumbing">Plumbing / Drain Cleaning</option>
+                            <option value="waterheater">Water Heater Repair/Install</option>
+                            <option value="electrical">Electrical Repair</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-block">Submit Booking Request</button>
+                    <div id="form-success-alert" class="success-alert hidden">
+                        <i class="fa-solid fa-circle-check"></i> Service request submitted! We will call you shortly.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coupons & Special Offers Section (Key Will Fix It style element) -->
+    <section class="coupons-section" id="coupons">
+        <div class="container">
+            <div class="section-title-wrapper text-center">
+                <h2>San Antonio Special Offers & Coupons</h2>
+                <p>Print or show these coupons to your service technician to save today!</p>
+            </div>
+
+            <div class="coupons-grid">
+                <!-- Coupon 1 -->
+                <div class="coupon-card">
+                    <div class="coupon-inner">
+                        <div class="coupon-header">
+                            <span class="save-tag">SAVE</span>
+                            <span class="discount-value">$50</span>
+                        </div>
+                        <h3>Any Plumbing Repair</h3>
+                        <p>Discount off any standard plumbing repair service. Cannot be combined with other offers.</p>
+                        <span class="coupon-code">CODE: PL50</span>
+                    </div>
+                </div>
+                <!-- Coupon 2 -->
+                <div class="coupon-card coupon-highlight">
+                    <div class="coupon-inner">
+                        <div class="coupon-header">
+                            <span class="save-tag">SAVE</span>
+                            <span class="discount-value">$99</span>
+                        </div>
+                        <h3>A/C & Heating Safety Tune-Up</h3>
+                        <p>Complete professional diagnostic checkup of your HVAC system before the season.</p>
+                        <span class="coupon-code">CODE: AC99</span>
+                    </div>
+                </div>
+                <!-- Coupon 3 -->
+                <div class="coupon-card">
+                    <div class="coupon-inner">
+                        <div class="coupon-header">
+                            <span class="save-tag">FREE</span>
+                            <span class="discount-value">Water</span>
+                        </div>
+                        <h3>Heater Diagnostic Check</h3>
+                        <p>Complimentary diagnostic callout with any water heater repair service.</p>
+                        <span class="coupon-code">CODE: WHTEST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title-wrapper text-center">
+                <h2>Our HVAC, Plumbing & Electric Services</h2>
+                <p>We provide comprehensive solutions to keep your home running safely and comfortably.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon-circle"><i class="fa-solid fa-snowflake"></i></div>
+                    <h3>Heating & Cooling</h3>
+                    <p>Professional air conditioner repairs, furnace checkups, heat pump installations, and regular seasonal maintenance tune-ups.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon-circle"><i class="fa-solid fa-faucet"></i></div>
+                    <h3>Plumbing & Drains</h3>
+                    <p>Drain snaking, sewer line repair, slab leak detection, garbage disposal repair, and Bradford White water heater installations.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon-circle"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Electrical Systems</h3>
+                    <p>Safety inspections, panel upgrades, wiring, generator installations, and lighting solutions from licensed residential electricians.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Value Propositions -->
+    <section class="why-us-section" id="why-us">
+        <div class="container why-us-grid">
+            <div class="why-us-content">
+                <h2>Why San Antonio Chooses Will Fix It</h2>
+                <p>We are dedicated to providing the highest quality repairs and customer service. Our technicians are fully licensed, background-checked, and respect your home.</p>
+                
+                <div class="value-block">
+                    <h4><i class="fa-solid fa-shield-halved"></i> Exceptional Service Guarantee</h4>
+                    <p>If you are not completely satisfied with our service, we will do whatever it takes to make it right.</p>
+                </div>
+                
+                <div class="value-block">
+                    <h4><i class="fa-solid fa-user-check"></i> Licensed & Background-Checked</h4>
+                    <p>All our plumbers, HVAC techs, and electricians undergo rigorous training and vetting.</p>
+                </div>
+            </div>
+            <div class="why-us-graphics">
+                <div class="stat-container">
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-lbl">Satisfaction Guarantee</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-lbl">Emergency Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Will Fix It San Antonio</h3>
+                <p>Your trusted local HVAC, plumbing, and electrical service provider since 1994.</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>3535 Metro Pkwy, San Antonio, TX 78247</p>
+                <p>Office: (726) 222-4137</p>
+            </div>
+            <div>
+                <h4>Hours</h4>
+                <p>Monday - Sunday: Open 24 Hours</p>
+                <p>Emergency Dispatch Available</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Will Fix It. All rights reserved. San Antonio, Texas.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Form Script -->
+    <script>
+        document.getElementById("hero-schedule-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            this.style.display = "none";
+            document.getElementById("form-success-alert").classList.remove("hidden");
+        });
+    </script>
+</body>
+</html>
