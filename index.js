@@ -1,34 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Zip Code Service Checker
-    const checkZipBtn = document.getElementById("check-zip-btn");
-    const zipInput = document.getElementById("zip-input");
-    const checkerResponse = document.getElementById("checker-response");
-
-    // Sample active San Antonio service zip codes
-    const activeZips = ["78247", "78209", "78258", "78216", "78230", "78248", "78259", "78232"];
-
-    checkZipBtn.addEventListener("click", () => {
-        const zip = zipInput.value.trim();
-        checkerResponse.classList.remove("hidden", "response-success", "response-fail");
-
-        if (zip === "") {
-            checkerResponse.textContent = "Please enter a valid zip code.";
-            checkerResponse.classList.add("response-fail");
-            return;
-        }
-
-        if (activeZips.includes(zip)) {
-            checkerResponse.textContent = `✓ Yes! We serve ${zip} with immediate dispatch priority.`;
-            checkerResponse.classList.add("response-success");
-        } else {
-            checkerResponse.textContent = `✗ Sorry, ${zip} is outside our immediate service area. Call us to confirm.`;
-            checkerResponse.classList.add("response-fail");
-        }
-    });
-
-    // Dynamic Pricing Estimate Calculator
-    const calcChecks = document.querySelectorAll(".calc-check");
+    // Dynamic Pricing Estimate Calculator using Visual Cards
+    const calcCards = document.querySelectorAll(".calc-item-card");
     const calcTotal = document.getElementById("calc-total");
     const calcSelectedList = document.getElementById("calc-selected-list");
 
@@ -37,14 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
         calcSelectedList.innerHTML = "";
         let selectedCount = 0;
 
-        calcChecks.forEach(check => {
-            if (check.checked) {
+        calcCards.forEach(card => {
+            if (card.classList.contains("active")) {
                 selectedCount++;
-                const name = check.dataset.name;
-                const price = parseFloat(check.dataset.price);
+                const name = card.dataset.name;
+                const price = parseFloat(card.dataset.price);
                 total += price;
 
-                // Add list item
+                // Add item to sidebar list
                 const li = document.createElement("li");
                 li.innerHTML = `<span>${name}</span> <span>$${price}</span>`;
                 calcSelectedList.appendChild(li);
@@ -61,8 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
         calcTotal.textContent = total;
     }
 
-    calcChecks.forEach(check => {
-        check.addEventListener("change", updateCalculator);
+    calcCards.forEach(card => {
+        card.addEventListener("click", () => {
+            card.classList.toggle("active");
+            updateCalculator();
+        });
+    });
+
+    // Calculator Booking Form Submission
+    const calcBookingForm = document.getElementById("calc-booking-form");
+    const calcSuccess = document.getElementById("calc-success");
+
+    calcBookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        calcBookingForm.style.display = "none";
+        calcSuccess.classList.remove("hidden");
     });
 
     // FAQ Accordion Toggle
@@ -71,11 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
     faqQuestions.forEach(btn => {
         btn.addEventListener("click", () => {
             const faqItem = btn.parentElement;
-            
-            // Toggle active class
             faqItem.classList.toggle("active");
 
-            // Close others if desired (accordion style)
+            // Close other items
             document.querySelectorAll(".faq-item").forEach(item => {
                 if (item !== faqItem) {
                     item.classList.remove("active");
@@ -84,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Form Handling
+    // Hero Form Handling
     const scheduleForm = document.getElementById("hero-schedule-form");
     const successAlert = document.getElementById("form-success-alert");
 

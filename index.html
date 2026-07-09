@@ -136,20 +136,110 @@
         </div>
     </section>
 
-    <!-- Interactive Zip Code Checker Section -->
-    <section class="zip-checker-section">
-        <div class="container Checker-box">
-            <div class="checker-flex">
-                <div class="checker-text">
-                    <h4>Check If We Serve Your Area</h4>
-                    <p>Enter your San Antonio zip code to verify immediate dispatch availability.</p>
-                </div>
-                <div class="checker-input-area">
-                    <input type="text" id="zip-input" placeholder="Enter Zip Code (e.g. 78247)" class="form-control zip-control">
-                    <button id="check-zip-btn" class="btn btn-primary">Check Availability</button>
+    <!-- Dynamic Pricing Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-title-wrapper text-center">
+                <h2>Interactive Estimate Calculator</h2>
+                <p>Select the baseline services you need to estimate your diagnostics and repair range.</p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calc-grid">
+                    <div class="calc-options">
+                        <h3>1. Select Services Needed</h3>
+                        
+                        <div class="calc-block">
+                            <h5><i class="fa-solid fa-snowflake"></i> Heating & Cooling</h5>
+                            <div class="calc-cards-group">
+                                <div class="calc-item-card" data-price="99" data-name="AC Safety Tune-Up">
+                                    <div class="card-icon"><i class="fa-solid fa-snowflake"></i></div>
+                                    <div class="card-info">
+                                        <span class="title">AC Safety Tune-Up</span>
+                                        <span class="price">$99</span>
+                                    </div>
+                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                                </div>
+                                <div class="calc-item-card" data-price="149" data-name="System Diagnostic">
+                                    <div class="card-icon"><i class="fa-solid fa-temperature-high"></i></div>
+                                    <div class="card-info">
+                                        <span class="title">AC/Heating Diagnostic</span>
+                                        <span class="price">$149</span>
+                                    </div>
+                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-block">
+                            <h5><i class="fa-solid fa-faucet"></i> Plumbing & Drain</h5>
+                            <div class="calc-cards-group">
+                                <div class="calc-item-card" data-price="175" data-name="Drain Snaking">
+                                    <div class="card-icon"><i class="fa-solid fa-faucet"></i></div>
+                                    <div class="card-info">
+                                        <span class="title">Drain Snaking Service</span>
+                                        <span class="price">$175</span>
+                                    </div>
+                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                                </div>
+                                <div class="calc-item-card" data-price="250" data-name="Leak Diagnostics">
+                                    <div class="card-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+                                    <div class="card-info">
+                                        <span class="title">Slab Leak Detection</span>
+                                        <span class="price">$250</span>
+                                    </div>
+                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-block">
+                            <h5><i class="fa-solid fa-bolt"></i> Electrical Services</h5>
+                            <div class="calc-cards-group">
+                                <div class="calc-item-card" data-price="89" data-name="Safety Inspection">
+                                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                                    <div class="card-info">
+                                        <span class="title">Home Electrical Safety Check</span>
+                                        <span class="price">$89</span>
+                                    </div>
+                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calc-summary">
+                        <div class="summary-box">
+                            <h4>Estimated baseline</h4>
+                            <div class="price-val">$<span id="calc-total">0</span></div>
+                            <p class="summary-disclaimer">*Standard diagnostic rates only. Parts and custom repairs determined on site.</p>
+                            
+                            <h5>Selected Items:</h5>
+                            <ul id="calc-selected-list" class="summary-list">
+                                <li class="empty-msg">No services selected</li>
+                            </ul>
+                            
+                            <hr class="calc-hr">
+                            
+                            <div class="calc-lead-form">
+                                <h5>Lock In Estimate & Book</h5>
+                                <form id="calc-booking-form">
+                                    <div class="form-group">
+                                        <input type="text" id="calc-name" placeholder="Your Name" required class="form-control calc-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" id="calc-phone" placeholder="Phone Number" required class="form-control calc-input">
+                                    </div>
+                                    <button type="submit" class="btn btn-secondary btn-block">Lock Estimate & Submit</button>
+                                </form>
+                                <div id="calc-success" class="success-alert hidden">
+                                    <i class="fa-solid fa-circle-check"></i> Estimate booked! We'll reach out shortly.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="checker-response" class="checker-response-alert hidden"></div>
         </div>
     </section>
 
@@ -264,68 +354,6 @@
                     <div class="b-item"><i class="fa-solid fa-calendar-check"></i> Fast Response Dispatch Times</div>
                 </div>
                 <a href="#booking-form-anchor" class="btn btn-primary btn-lg">Book Service Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dynamic Pricing Calculator Section -->
-    <section class="calculator-section" id="calculator">
-        <div class="container">
-            <div class="section-title-wrapper text-center">
-                <h2>Interactive Estimate Calculator</h2>
-                <p>Select the baseline services you need to estimate your diagnostics and repair range.</p>
-            </div>
-
-            <div class="calculator-card">
-                <div class="calc-grid">
-                    <div class="calc-options">
-                        <h3>1. Select Services Needed</h3>
-                        
-                        <div class="calc-block">
-                            <h5><i class="fa-solid fa-snowflake"></i> Heating & Cooling</h5>
-                            <div class="calc-option-item">
-                                <label><input type="checkbox" class="calc-check" data-price="99" data-name="AC Safety Tune-Up"> AC Safety Tune-Up ($99)</label>
-                            </div>
-                            <div class="calc-option-item">
-                                <label><input type="checkbox" class="calc-check" data-price="149" data-name="System Diagnostic"> AC/Heating Diagnostic ($149)</label>
-                            </div>
-                        </div>
-
-                        <div class="calc-block">
-                            <h5><i class="fa-solid fa-faucet"></i> Plumbing & Drain</h5>
-                            <div class="calc-option-item">
-                                <label><input type="checkbox" class="calc-check" data-price="175" data-name="Drain Snaking"> Drain Snaking Service ($175)</label>
-                            </div>
-                            <div class="calc-option-item">
-                                <label><input type="checkbox" class="calc-check" data-price="250" data-name="Leak Diagnostics"> Slab Leak Detection ($250)</label>
-                            </div>
-                        </div>
-
-                        <div class="calc-block">
-                            <h5><i class="fa-solid fa-bolt"></i> Electrical Services</h5>
-                            <div class="calc-option-item">
-                                <label><input type="checkbox" class="calc-check" data-price="89" data-name="Safety Inspection"> Home Electrical Safety Check ($89)</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="calc-summary">
-                        <div class="summary-box">
-                            <h4>Estimated baseline</h4>
-                            <div class="price-val">$<span id="calc-total">0</span></div>
-                            <p class="summary-disclaimer">*Standard diagnostic rates only. Parts and custom repairs determined on site.</p>
-                            
-                            <hr class="calc-hr">
-                            
-                            <h5>Selected Items:</h5>
-                            <ul id="calc-selected-list" class="summary-list">
-                                <li class="empty-msg">No services selected</li>
-                            </ul>
-                            
-                            <a href="#booking-form-anchor" class="btn btn-secondary btn-block">Lock In Estimate</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
