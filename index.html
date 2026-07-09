@@ -35,6 +35,10 @@
                 <span class="logo-text-secondary">HVAC • PLUMBING • ELECTRIC</span>
             </div>
             
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
             <nav class="desktop-nav">
                 <!-- Dropdown 1: Plumbing -->
                 <div class="nav-dropdown">
@@ -152,61 +156,29 @@
                         <h3>1. Select Services Needed</h3>
                         
                         <div class="calc-block">
-                            <h5><i class="fa-solid fa-snowflake"></i> Heating & Cooling</h5>
-                            <div class="calc-cards-group">
-                                <div class="calc-item-card" data-price="99" data-name="AC Safety Tune-Up">
-                                    <div class="card-icon"><i class="fa-solid fa-snowflake"></i></div>
-                                    <div class="card-info">
-                                        <span class="title">AC Safety Tune-Up</span>
-                                        <span class="price">$99</span>
-                                    </div>
-                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
-                                </div>
-                                <div class="calc-item-card" data-price="149" data-name="System Diagnostic">
-                                    <div class="card-icon"><i class="fa-solid fa-temperature-high"></i></div>
-                                    <div class="card-info">
-                                        <span class="title">AC/Heating Diagnostic</span>
-                                        <span class="price">$149</span>
-                                    </div>
-                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
-                                </div>
-                            </div>
+                            <label class="calc-dropdown-label" for="calc-hvac"><i class="fa-solid fa-snowflake"></i> Heating & Cooling</label>
+                            <select id="calc-hvac" class="form-control calc-select-field">
+                                <option value="0" data-name="No HVAC Service Selected">-- Select HVAC Service --</option>
+                                <option value="99" data-name="AC Safety Tune-Up">AC Safety Tune-Up ($99)</option>
+                                <option value="149" data-name="AC/Heating Diagnostic">AC/Heating Diagnostic ($149)</option>
+                            </select>
                         </div>
 
                         <div class="calc-block">
-                            <h5><i class="fa-solid fa-faucet"></i> Plumbing & Drain</h5>
-                            <div class="calc-cards-group">
-                                <div class="calc-item-card" data-price="175" data-name="Drain Snaking">
-                                    <div class="card-icon"><i class="fa-solid fa-faucet"></i></div>
-                                    <div class="card-info">
-                                        <span class="title">Drain Snaking Service</span>
-                                        <span class="price">$175</span>
-                                    </div>
-                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
-                                </div>
-                                <div class="calc-item-card" data-price="250" data-name="Leak Diagnostics">
-                                    <div class="card-icon"><i class="fa-solid fa-droplet-slash"></i></div>
-                                    <div class="card-info">
-                                        <span class="title">Slab Leak Detection</span>
-                                        <span class="price">$250</span>
-                                    </div>
-                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
-                                </div>
-                            </div>
+                            <label class="calc-dropdown-label" for="calc-plumbing"><i class="fa-solid fa-faucet"></i> Plumbing & Drain</label>
+                            <select id="calc-plumbing" class="form-control calc-select-field">
+                                <option value="0" data-name="No Plumbing Service Selected">-- Select Plumbing Service --</option>
+                                <option value="175" data-name="Drain Snaking Service">Drain Snaking Service ($175)</option>
+                                <option value="250" data-name="Slab Leak Detection">Slab Leak Detection ($250)</option>
+                            </select>
                         </div>
 
                         <div class="calc-block">
-                            <h5><i class="fa-solid fa-bolt"></i> Electrical Services</h5>
-                            <div class="calc-cards-group">
-                                <div class="calc-item-card" data-price="89" data-name="Safety Inspection">
-                                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                                    <div class="card-info">
-                                        <span class="title">Home Electrical Safety Check</span>
-                                        <span class="price">$89</span>
-                                    </div>
-                                    <div class="card-select-indicator"><i class="fa-solid fa-circle-check"></i></div>
-                                </div>
-                            </div>
+                            <label class="calc-dropdown-label" for="calc-electrical"><i class="fa-solid fa-bolt"></i> Electrical Services</label>
+                            <select id="calc-electrical" class="form-control calc-select-field">
+                                <option value="0" data-name="No Electrical Service Selected">-- Select Electrical Service --</option>
+                                <option value="89" data-name="Home Electrical Safety Check">Home Electrical Safety Check ($89)</option>
+                            </select>
                         </div>
                     </div>
 
@@ -235,7 +207,7 @@
                                     <div class="form-group">
                                         <input type="tel" id="calc-phone" placeholder="Phone Number" required class="form-control calc-input">
                                     </div>
-                                    <button type="submit" class="btn btn-secondary btn-block">Lock Estimate & Submit</button>
+                                    <button type="submit" class="btn btn-prominent btn-block">Lock Estimate & Submit</button>
                                 </form>
                                 <div id="calc-success" class="success-alert hidden">
                                     <i class="fa-solid fa-circle-check"></i> Estimate booked! We'll reach out shortly.
@@ -329,8 +301,10 @@
             <div class="services-grid">
                 <!-- Service 1 -->
                 <div class="service-card">
-                    <div class="service-icon-circle"><i class="fa-solid fa-snowflake"></i></div>
-                    <h3>Heating & Cooling</h3>
+                    <div class="service-card-header">
+                        <div class="service-icon-circle"><i class="fa-solid fa-snowflake"></i></div>
+                        <h3>Heating & Cooling</h3>
+                    </div>
                     <p>Professional diagnostic repairs, furnace checkups, central heat pump installations, and regular seasonal maintenance tune-ups.</p>
                     <ul class="srv-points">
                         <li><i class="fa-solid fa-check"></i> System Repairs</li>
@@ -340,8 +314,10 @@
                 </div>
                 <!-- Service 2 -->
                 <div class="service-card">
-                    <div class="service-icon-circle"><i class="fa-solid fa-faucet"></i></div>
-                    <h3>Plumbing & Drains</h3>
+                    <div class="service-card-header">
+                        <div class="service-icon-circle"><i class="fa-solid fa-faucet"></i></div>
+                        <h3>Plumbing & Drains</h3>
+                    </div>
                     <p>Drain cleaning, sewer line repairs, slab leak detection, garbage disposal repairs, and tankless water heater installations.</p>
                     <ul class="srv-points">
                         <li><i class="fa-solid fa-check"></i> Main Sewer Lines</li>
@@ -351,8 +327,10 @@
                 </div>
                 <!-- Service 3 -->
                 <div class="service-card">
-                    <div class="service-icon-circle"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Electrical Systems</h3>
+                    <div class="service-card-header">
+                        <div class="service-icon-circle"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Electrical Systems</h3>
+                    </div>
                     <p>Electrical panel upgrades, wiring, generator installations, surge protection, and safety checks from residential electricians.</p>
                     <ul class="srv-points">
                         <li><i class="fa-solid fa-check"></i> Panel Upgrades</li>
@@ -423,7 +401,13 @@
         <div class="container footer-grid">
             <div>
                 <h3>Will Fix It San Antonio</h3>
-                <p>Your trusted local HVAC, plumbing, and electrical service provider since 1994.</p>
+                <p style="margin-bottom: 15px;">Your trusted local HVAC, plumbing, and electrical service provider since 1994.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
             <div>
                 <h4>Contact Us</h4>
